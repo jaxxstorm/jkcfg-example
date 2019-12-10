@@ -1,0 +1,24 @@
+service:
+  name: myapp # the name of your service
+  namespace: myapp # the namespace you want to deploy to
+  # deployment specific config
+  deployment:
+    annotations: # a key value mapping, below is an example
+      # 'iam.amazonaws.com/role': 'kiam-role
+    image: jaxxstorm/myapp
+  ingress:
+    class: 'default'
+    host: 'myapp.example.com' # the url you want to access you app on
+  ports:
+    web: 8080
+    health: 8081
+  resources:
+    requests:
+      cpu: "500m"
+      memory: "500Mi"
+    limits:
+      cpu: "2000m"
+      memory: "2000Mi"
+  environment: dev
+  tier: standard # only used for some config options, added as a label
+  region: us-west-2

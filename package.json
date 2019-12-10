@@ -1,0 +1,13 @@
+{
+  "name": "jkcfg-example",
+  "version": "1.0.0",
+  "description": "An example jkcfg deployment",
+  "main": "complex/index.js",
+  "repository": "https://github.com/jaxxstorm/jkcfg-example",
+  "author": "Lee Briggs",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@jkcfg/kubernetes": "^0.5.1"
+  }
+}

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+  namespace: myapp
+spec:
+  replicas: 100
+  template:
+    spec:
+      containers:
+      - image: jaxxstorm/myapp
+        imagePullPolicy: IfNotPresent
+        name: myapp
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 2000m
+            memory: 2000Mi
+          requests:
+            cpu: 500m
+            memory: 500Mi
